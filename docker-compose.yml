@@ -11,5 +11,5 @@ services:
         - HTTPS_PROXY=$HTTPS_PROXY
         - https_proxy=$https_proxy
     volumes: # ボリュームのアタッチ
-      - ./data:/root
+      - ./data:/root/workspace
     tty: true

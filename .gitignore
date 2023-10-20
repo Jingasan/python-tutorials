@@ -3,3 +3,5 @@
 *.las
 *.laz
 *.obj
+.vscode
+.vscode-server

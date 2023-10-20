@@ -2,7 +2,10 @@ FROM ubuntu:22.04 as builder
 
 # 依存パッケージのインストール
 RUN apt-get -y update && apt-get install -y python3 python3-pip pdal
-RUN pip install numpy pandas matplotlib laspy[lazrs,laszip] scipy alphashape shapely
 
-# ワーキングディレクトリを/homeに設定
-WORKDIR /root
+# Pythonの依存パッケージのインストール
+COPY requirements.txt /requirements.txt
+RUN pip install -r /requirements.txt
+
+# ワーキングディレクトリを/root/workspaceに設定
+WORKDIR /root/workspace
